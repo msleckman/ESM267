@@ -1,0 +1,63 @@
+#######################
+# Margaux Sleckman   ##
+# msleckman@ucsb.edu ##
+#######################
+
+# output should be in california albers
+# reproject to put 143 
+
+
+## Define variables:
+Ex: 
+roi = InVEST_CV/AOI_BarkClay.shp
+...
+common_args = "-dstnodata -32768 -of GTiff -co COMPRESS=DEFLATE"
+...
+clip_args= " -cutline $roi -crop_to_cutline"
+...
+project_args = "-t_srs EPSG:3310"
+
+# ogrinfo
+gdalinfo -al -so assign2/Modis/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif
+ogrinfo -al -so assign2/counties/tl_2016_us_county/tl_2016_us_county.shp
+
+# rename
+ca_south_geo143.tif = "./Modis/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif"
+tl_2016_us_county.shp = "./counties/tl_2016_us_county/tl_2016_us_county.shp"
+
+
+## check projections
+# what to use to verify projections: du -b */*.shp
+du -b ./Modis/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif  ./counties/tl_2016_us_county/tl_2016_us_county.shp
+
+	30331494        ./Modis/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif
+	123982264       ./counties/tl_2016_us_county/tl_2016_us_county.shp
+
+# Note: describes the projections and shows that they are diff
+
+## i. Reprojection 
+
+# ogr2ogr -t_srs EPSG:4326 aoi.shp InVEST_CV/AOI_BarkClay.shp
+	
+## what we use:	
+
+gdalwarp -t_srs EPSG:3310 ./assign2/MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif ./assign2/MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/reproject_geo143.tif
+
+## Try to rename the files
+
+## Result is suppose to be "0...10...20...30...40...50...60...70...80...90...100 - done."
+
+# ii. extract santa barbara county feature of the tl_2016_us_county.shp file 
+ 
+ ogrinfo -al -so tl_2016_us_county.shp
+    # will use #name
+
+ ogr2ogr -where "NAME='Santa Barbara'" santa_barbara_county tl_2016_us_county.shp
+# creates a folder within tl_2016_us_county that has a copy of the files 
+# need to rename 
+
+" gdalwarp -dstnodata -32768 -of GTiff -co COMPRESS=DEFLATE" -cutline $roi -crop_to_cutline "
+
+
+## iii. Perform the clipdst on the raster within the feature cliped from ii. 
+" gdalwarp -dstnodata -32768 -of GTiff -co COMPRESS=DEFLATE" -cutline $roi -crop_to_cutline "

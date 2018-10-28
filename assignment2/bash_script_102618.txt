@@ -1,0 +1,1367 @@
+msleckman@COTA MINGW64 ~ (master)
+$ ogrinfo
+
+FAILURE: No datasource specified.
+Usage: ogrinfo [--help-general] [-ro] [-q] [-where restricted_where|@filename]
+               [-spat xmin ymin xmax ymax] [-geomfield field] [-fid fid]
+               [-sql statement|@filename] [-dialect sql_dialect] [-al] [-rl] [o] [-fields={YES/NO}]
+               [-geom={YES/NO/SUMMARY}] [-formats] [[-oo NAME=VALUE] ...]
+               [-nomd] [-listmdd] [-mdd domain|`all`]*
+               [-nocount] [-noextent]
+               datasource_name [layer [layer ...]]
+
+msleckman@COTA MINGW64 ~ (master)
+$ cd ESM267/
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ cd lab2/
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ls
+claybark_dem_clipped.tif  global_pop_clipped.tif  InVEST_CV/    pre.sh
+claybark_dem_utm10n.tif   global_pop_utm10n.tif   InVEST_CV.7z  Thumbs.db
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo
+
+FAILURE: No datasource specified.
+Usage: ogrinfo [--help-general] [-ro] [-q] [-where restricted_where|@filename]
+               [-spat xmin ymin xmax ymax] [-geomfield field] [-fid fid]
+               [-sql statement|@filename] [-dialect sql_dialect] [-al] [-rl] [o] [-fields={YES/NO}]
+               [-geom={YES/NO/SUMMARY}] [-formats] [[-oo NAME=VALUE] ...]
+               [-nomd] [-listmdd] [-mdd domain|`all`]*
+               [-nocount] [-noextent]
+               datasource_name [layer [layer ...]]
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al -so InVEST
+FAILURE:
+Unable to open datasource `InVEST' with the following drivers.
+  -> JP2ECW
+  -> OCI
+  -> SOSI
+  -> PCIDSK
+  -> netCDF
+  -> JP2OpenJPEG
+  -> PDF
+  -> DB2ODBC
+  -> ESRI Shapefile
+  -> MapInfo File
+  -> UK .NTF
+  -> OGR_SDTS
+  -> S57
+  -> DGN
+  -> OGR_VRT
+  -> REC
+  -> Memory
+  -> BNA
+  -> CSV
+  -> NAS
+  -> GML
+  -> GPX
+  -> LIBKML
+  -> KML
+  -> GeoJSON
+  -> Interlis 1
+  -> Interlis 2
+  -> OGR_GMT
+  -> GPKG
+  -> SQLite
+  -> ODBC
+  -> WAsP
+  -> PGeo
+  -> MSSQLSpatial
+  -> OGR_OGDI
+  -> PostgreSQL
+  -> MySQL
+  -> OpenFileGDB
+  -> XPlane
+  -> DXF
+  -> CAD
+  -> Geoconcept
+  -> GeoRSS
+  -> GPSTrackMaker
+  -> VFK
+  -> PGDUMP
+  -> OSM
+  -> GPSBabel
+  -> SUA
+  -> OpenAir
+  -> OGR_PDS
+  -> WFS
+  -> HTF
+  -> AeronavFAA
+  -> Geomedia
+  -> EDIGEO
+  -> GFT
+  -> SVG
+  -> CouchDB
+  -> Cloudant
+  -> Idrisi
+  -> ARCGEN
+  -> SEGUKOOA
+  -> SEGY
+  -> XLS
+  -> ODS
+  -> XLSX
+  -> ElasticSearch
+  -> Walk
+  -> Carto
+  -> AmigoCloud
+  -> SXF
+  -> Selafin
+  -> JML
+  -> PLSCENES
+  -> CSW
+  -> VDV
+  -> GMLAS
+  -> TIGER
+  -> AVCBin
+  -> AVCE00
+  -> HTTP
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al -so InVEST_CV/
+AOI_BarkClay.dbf        claybark_dem/           global_polygon.shp
+AOI_BarkClay.prj        claybark_dem.aux        global_polygon.shp.xml
+AOI_BarkClay.sbn        claybark_dem.aux.xml    global_polygon.shx
+AOI_BarkClay.sbx        global_polygon.dbf      global_pop/
+AOI_BarkClay.shp        global_polygon.prj      global_pop.aux
+AOI_BarkClay.shp.xml    global_polygon.sbn      global_pop.aux.xml
+AOI_BarkClay.shx        global_polygon.sbx      info/
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al -so InVEST_CV/global_polygon.sh
+global_polygon.shp      global_polygon.shp.xml  global_polygon.shx
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al -so InVEST_CV/global_polygon.shp
+INFO: Open of `InVEST_CV/global_polygon.shp'
+      using driver `ESRI Shapefile' successful.
+
+Layer name: global_polygon
+Metadata:
+  DBF_DATE_LAST_UPDATE=2011-01-01
+Geometry: Polygon
+Feature Count: 180497
+Extent: (-180.000000, -90.000000) - (180.000000, 83.633389)
+Layer SRS WKT:
+GEOGCS["GCS_WGS_1984",
+    DATUM["WGS_1984",
+        SPHEROID["WGS_84",6378137.0,298.257223563]],
+    PRIMEM["Greenwich",0.0],
+    UNIT["Degree",0.0174532925199433],
+    AUTHORITY["EPSG","4326"]]
+id: String (80.0)
+area: Real (19.15)
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ open qgis
+bash: open: command not found
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ start QGIS
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ start QGIS Desktop
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al -so InVEST_CV/
+AOI_BarkClay.dbf        claybark_dem/           global_polygon.shp
+AOI_BarkClay.prj        claybark_dem.aux        global_polygon.shp.xml
+AOI_BarkClay.sbn        claybark_dem.aux.xml    global_polygon.shx
+AOI_BarkClay.sbx        global_polygon.dbf      global_pop/
+AOI_BarkClay.shp        global_polygon.prj      global_pop.aux
+AOI_BarkClay.shp.xml    global_polygon.sbn      global_pop.aux.xml
+AOI_BarkClay.shx        global_polygon.sbx      info/
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al -so InVEST_CV/AOI_BarkClay.
+FAILURE:
+Unable to open datasource `InVEST_CV/AOI_BarkClay.' with the following drivers
+  -> JP2ECW
+  -> OCI
+  -> SOSI
+  -> PCIDSK
+  -> netCDF
+  -> JP2OpenJPEG
+  -> PDF
+  -> DB2ODBC
+  -> ESRI Shapefile
+  -> MapInfo File
+  -> UK .NTF
+  -> OGR_SDTS
+  -> S57
+  -> DGN
+  -> OGR_VRT
+  -> REC
+  -> Memory
+  -> BNA
+  -> CSV
+  -> NAS
+  -> GML
+  -> GPX
+  -> LIBKML
+  -> KML
+  -> GeoJSON
+  -> Interlis 1
+  -> Interlis 2
+  -> OGR_GMT
+  -> GPKG
+  -> SQLite
+  -> ODBC
+  -> WAsP
+  -> PGeo
+  -> MSSQLSpatial
+  -> OGR_OGDI
+  -> PostgreSQL
+  -> MySQL
+  -> OpenFileGDB
+  -> XPlane
+  -> DXF
+  -> CAD
+  -> Geoconcept
+  -> GeoRSS
+  -> GPSTrackMaker
+  -> VFK
+  -> PGDUMP
+  -> OSM
+  -> GPSBabel
+  -> SUA
+  -> OpenAir
+  -> OGR_PDS
+  -> WFS
+  -> HTF
+  -> AeronavFAA
+  -> Geomedia
+  -> EDIGEO
+  -> GFT
+  -> SVG
+  -> CouchDB
+  -> Cloudant
+  -> Idrisi
+  -> ARCGEN
+  -> SEGUKOOA
+  -> SEGY
+  -> XLS
+  -> ODS
+  -> XLSX
+  -> ElasticSearch
+  -> Walk
+  -> Carto
+  -> AmigoCloud
+  -> SXF
+  -> Selafin
+  -> JML
+  -> PLSCENES
+  -> CSW
+  -> VDV
+  -> GMLAS
+  -> TIGER
+  -> AVCBin
+  -> AVCE00
+  -> HTTP
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al -so InVEST_CV/AOI_BarkClay.
+AOI_BarkClay.dbf      AOI_BarkClay.sbx      AOI_BarkClay.shx
+AOI_BarkClay.prj      AOI_BarkClay.shp
+AOI_BarkClay.sbn      AOI_BarkClay.shp.xml
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al -so InVEST_CV/AOI_BarkClay.shp
+INFO: Open of `InVEST_CV/AOI_BarkClay.shp'
+      using driver `ESRI Shapefile' successful.
+
+Layer name: AOI_BarkClay
+Metadata:
+  DBF_DATE_LAST_UPDATE=2011-04-01
+Geometry: Polygon
+Feature Count: 1
+Extent: (208219.025694, 5298738.660312) - (391517.926152, 5497492.251075)
+Layer SRS WKT:
+PROJCS["WGS_1984_UTM_Zone_10N",
+    GEOGCS["GCS_WGS_1984",
+        DATUM["WGS_1984",
+            SPHEROID["WGS_84",6378137.0,298.257223563]],
+        PRIMEM["Greenwich",0.0],
+        UNIT["Degree",0.0174532925199433],
+        AUTHORITY["EPSG","4326"]],
+    PROJECTION["Transverse_Mercator"],
+    PARAMETER["False_Easting",500000.0],
+    PARAMETER["False_Northing",0.0],
+    PARAMETER["Central_Meridian",-123.0],
+    PARAMETER["Scale_Factor",0.9996],
+    PARAMETER["Latitude_Of_Origin",0.0],
+    UNIT["Meter",1.0],
+    AUTHORITY["EPSG","32610"]]
+Name: String (60.0)
+land: Integer (4.0)
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ orginfo --help
+bash: orginfo: command not found
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ orginfo -help
+bash: orginfo: command not found
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ --help
+bash: --help: command not found
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ -h
+bash: -h: command not found
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -h
+
+FAILURE: Unknown option name '-h'
+Usage: ogrinfo [--help-general] [-ro] [-q] [-where restricted_where|@filename]
+               [-spat xmin ymin xmax ymax] [-geomfield field] [-fid fid]
+               [-sql statement|@filename] [-dialect sql_dialect] [-al] [-rl] [o] [-fields={YES/NO}]
+               [-geom={YES/NO/SUMMARY}] [-formats] [[-oo NAME=VALUE] ...]
+               [-nomd] [-listmdd] [-mdd domain|`all`]*
+               [-nocount] [-noextent]
+               datasource_name [layer [layer ...]]
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo --help-general
+Generic GDAL utility command options:
+  --version: report version of GDAL in use.
+  --license: report GDAL license info.
+  --formats: report all configured format drivers.
+  --format [format]: details of one format.
+  --optfile filename: expand an option file into the argument list.
+  --config key value: set system configuration option.
+  --debug [on/off/value]: set debug level.
+  --pause: wait for user input, time to attach debugger
+  --locale [locale]: install locale for debugging (i.e. en_US.UTF-8)
+  --help-general: report detailed help on general options.
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo --help-ro
+
+FAILURE: Unknown option name '--help-ro'
+Usage: ogrinfo [--help-general] [-ro] [-q] [-where restricted_where|@filename]
+               [-spat xmin ymin xmax ymax] [-geomfield field] [-fid fid]
+               [-sql statement|@filename] [-dialect sql_dialect] [-al] [-rl] [NO}]
+               [-geom={YES/NO/SUMMARY}] [-formats] [[-oo NAME=VALUE] ...]
+               [-nomd] [-listmdd] [-mdd domain|`all`]*
+               [-nocount] [-noextent]
+               datasource_name [layer [layer ...]]
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo --help-so
+
+FAILURE: Unknown option name '--help-so'
+Usage: ogrinfo [--help-general] [-ro] [-q] [-where restricted_where|@filename]
+               [-spat xmin ymin xmax ymax] [-geomfield field] [-fid fid]
+               [-sql statement|@filename] [-dialect sql_dialect] [-al] [-rl] [NO}]
+               [-geom={YES/NO/SUMMARY}] [-formats] [[-oo NAME=VALUE] ...]
+               [-nomd] [-listmdd] [-mdd domain|`all`]*
+               [-nocount] [-noextent]
+               datasource_name [layer [layer ...]]
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al -so
+
+FAILURE: No datasource specified.
+Usage: ogrinfo [--help-general] [-ro] [-q] [-where restricted_where|@filename]
+               [-spat xmin ymin xmax ymax] [-geomfield field] [-fid fid]
+               [-sql statement|@filename] [-dialect sql_dialect] [-al] [-rl] [NO}]
+               [-geom={YES/NO/SUMMARY}] [-formats] [[-oo NAME=VALUE] ...]
+               [-nomd] [-listmdd] [-mdd domain|`all`]*
+               [-nocount] [-noextent]
+               datasource_name [layer [layer ...]]
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al InVEST_CV/AOI_BarkClay.shp
+INFO: Open of `InVEST_CV/AOI_BarkClay.shp'
+      using driver `ESRI Shapefile' successful.
+
+Layer name: AOI_BarkClay
+Metadata:
+  DBF_DATE_LAST_UPDATE=2011-04-01
+Geometry: Polygon
+Feature Count: 1
+Extent: (208219.025694, 5298738.660312) - (391517.926152, 5497492.251075)
+Layer SRS WKT:
+PROJCS["WGS_1984_UTM_Zone_10N",
+    GEOGCS["GCS_WGS_1984",
+        DATUM["WGS_1984",
+            SPHEROID["WGS_84",6378137.0,298.257223563]],
+        PRIMEM["Greenwich",0.0],
+        UNIT["Degree",0.0174532925199433],
+        AUTHORITY["EPSG","4326"]],
+    PROJECTION["Transverse_Mercator"],
+    PARAMETER["False_Easting",500000.0],
+    PARAMETER["False_Northing",0.0],
+    PARAMETER["Central_Meridian",-123.0],
+    PARAMETER["Scale_Factor",0.9996],
+    PARAMETER["Latitude_Of_Origin",0.0],
+    UNIT["Meter",1.0],
+    AUTHORITY["EPSG","32610"]]
+Name: String (60.0)
+land: Integer (4.0)
+OGRFeature(AOI_BarkClay):0
+  Name (String) = (null)
+  land (Integer) = 0
+  POLYGON ((360460.92357048 5321100.22746519,339005.64048115 5298738.66031248,10425.31333731,299395.600615716 5319949.80374226,276666.662651804 5335587.442383 5373224.33379966,208219.025694202 5429786.06369172,210859.65717114 5461504.0344 5492361.89961493,263329.445153702 5497492.25107515,286333.261784598 54950076187149 5483065.72116842,367861.78697443 5465105.50696005,387320.543677512 5517.926151876 5414312.72756925,374656.56830693 5379916.53963261,360460.9235704)
+
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ du -b */*.shp
+428     InVEST_CV/AOI_BarkClay.shp
+161500092       InVEST_CV/global_polygon.shp
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ du -b -v */*.shp
+du: unknown option -- v
+Try 'du --help' for more information.
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ du -b */*.shp -v\
+> ^C
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ du -b */*.shp -v
+du: unknown option -- v
+Try 'du --help' for more information.
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ du --help
+Usage: du [OPTION]... [FILE]...
+  or:  du [OPTION]... --files0-from=F
+Summarize disk usage of the set of FILEs, recursively for directories.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -0, --null            end each output line with NUL, not newline
+  -a, --all             write counts for all files, not just directories
+      --apparent-size   print apparent sizes, rather than disk usage; although
+                          the apparent size is usually smaller, it may be
+                          larger due to holes in ('sparse') files, internal
+                          fragmentation, indirect blocks, and the like
+  -B, --block-size=SIZE  scale sizes by SIZE before printing them; e.g.,
+                           '-BM' prints sizes in units of 1,048,576 bytes;
+                           see SIZE format below
+  -b, --bytes           equivalent to '--apparent-size --block-size=1'
+  -c, --total           produce a grand total
+  -D, --dereference-args  dereference only symlinks that are listed on the
+                          command line
+  -d, --max-depth=N     print the total for a directory (or file, with --all)
+                          only if it is N or fewer levels below the command
+                          line argument;  --max-depth=0 is the same as
+                          --summarize
+      --files0-from=F   summarize disk usage of the
+                          NUL-terminated file names specified in file F;
+                          if F is -, then read names from standard input
+  -H                    equivalent to --dereference-args (-D)
+  -h, --human-readable  print sizes in human readable format (e.g., 1K 234M 2G
+      --inodes          list inode usage information instead of block usage
+  -k                    like --block-size=1K
+  -L, --dereference     dereference all symbolic links
+  -l, --count-links     count sizes many times if hard linked
+  -m                    like --block-size=1M
+  -P, --no-dereference  don't follow any symbolic links (this is the default)
+  -S, --separate-dirs   for directories do not include size of subdirectories
+      --si              like -h, but use powers of 1000 not 1024
+  -s, --summarize       display only a total for each argument
+  -t, --threshold=SIZE  exclude entries smaller than SIZE if positive,
+                          or entries greater than SIZE if negative
+      --time            show time of the last modification of any file in the
+                          directory, or any of its subdirectories
+      --time=WORD       show time as WORD instead of modification time:
+                          atime, access, use, ctime or status
+      --time-style=STYLE  show times using STYLE, which can be:
+                            full-iso, long-iso, iso, or +FORMAT;
+                            FORMAT is interpreted like in 'date'
+  -X, --exclude-from=FILE  exclude files that match any pattern in FILE
+      --exclude=PATTERN    exclude files that match PATTERN
+  -x, --one-file-system    skip directories on different file systems
+      --help     display this help and exit
+      --version  output version information and exit
+
+Display values are in units of the first available SIZE from --block-size,
+and the DU_BLOCK_SIZE, BLOCK_SIZE and BLOCKSIZE environment variables.
+Otherwise, units default to 1024 bytes (or 512 if POSIXLY_CORRECT is set).
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Full documentation at: <http://www.gnu.org/software/coreutils/du>
+or available locally via: info '(coreutils) du invocation'
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogr2ogr -t_srs EPSG:4326 aoi.shp InVEST_CV/AOI_BarkClay.shp
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al --help
+Usage: ogrinfo [--help-general] [-ro] [-q] [-where restricted_where|@filename]
+               [-spat xmin ymin xmax ymax] [-geomfield field] [-fid fid]
+               [-sql statement|@filename] [-dialect sql_dialect] [-al] [-rl] [NO}]
+               [-geom={YES/NO/SUMMARY}] [-formats] [[-oo NAME=VALUE] ...]
+               [-nomd] [-listmdd] [-mdd domain|`all`]*
+               [-nocount] [-noextent]
+               datasource_name [layer [layer ...]]
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al
+
+FAILURE: No datasource specified.
+Usage: ogrinfo [--help-general] [-ro] [-q] [-where restricted_where|@filename]
+               [-spat xmin ymin xmax ymax] [-geomfield field] [-fid fid]
+               [-sql statement|@filename] [-dialect sql_dialect] [-al] [-rl] [NO}]
+               [-geom={YES/NO/SUMMARY}] [-formats] [[-oo NAME=VALUE] ...]
+               [-nomd] [-listmdd] [-mdd domain|`all`]*
+               [-nocount] [-noextent]
+               datasource_name [layer [layer ...]]
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al
+aoi.dbf                   claybark_dem_clipped.tif  InVEST_CV/
+aoi.prj                   claybark_dem_utm10n.tif   InVEST_CV.7z
+aoi.shp                   global_pop_clipped.tif    pre.sh
+aoi.shx                   global_pop_utm10n.tif     Thumbs.db
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogrinfo -al aoi.shp
+INFO: Open of `aoi.shp'
+      using driver `ESRI Shapefile' successful.
+
+Layer name: aoi
+Metadata:
+  DBF_DATE_LAST_UPDATE=2018-10-26
+Geometry: Polygon
+Feature Count: 1
+Extent: (-126.985828, 47.821840) - (-124.479403, 49.583650)
+Layer SRS WKT:
+GEOGCS["GCS_WGS_1984",
+    DATUM["WGS_1984",
+        SPHEROID["WGS_84",6378137,298.257223563]],
+    PRIMEM["Greenwich",0],
+    UNIT["Degree",0.017453292519943295],
+    AUTHORITY["EPSG","4326"]]
+Name: String (60.0)
+land: Integer (4.0)
+OGRFeature(aoi):0
+  Name (String) = (null)
+  land (Integer) = 0
+  POLYGON ((-124.871655240397 48.0279384393975,-125.1508856043 47.821839837468 47.9215649674342,-125.689401306115 48.0013450714066,-126.001873380008 48.134308977854 48.460080669248,-126.985827995683 48.9520579770782,-126.972531311686 26.513795713834 49.5304637308774,-126.274455401915 49.583650466859,-125.9553348634,-125.616269544139 49.4706286528979,-124.818468504415 49.3243651289485,-12714532630014,-124.479403062532 48.872277873105,-124.698798348456 48.559805799297 48.0279384393975))
+
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ogr2ogr -f KML aoi.kml InVEST_CV/AOI_BarkClay.shp
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ start notepad++ aoi.kml
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ start aoi.kml
+aoi.dbf                   claybark_dem_clipped.tif  InVEST_CV.7z
+aoi.kml                   claybark_dem_utm10n.tif   pre.sh
+aoi.prj                   global_pop_clipped.tif    Thumbs.db
+aoi.shp                   global_pop_utm10n.tif
+aoi.shx                   InVEST_CV/
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ start aoi.kml
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$  ogr2ogr -clipdst aoi.shp clip.shp InVEST_CV/global_polygon.shp
+Warning 1: Value 31944.9703138000004 of field area of feature 0 not successfuly due to too larger number with respect to field width
+ERROR 1: IllegalArgumentException: Points of LinearRing do not form a closed l
+ERROR 1: IllegalArgumentException: Points of LinearRing do not form a closed l
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ ^C
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ start cl
+claybark_dem_clipped.tif  clip.dbf                  clip.shp
+claybark_dem_utm10n.tif   clip.prj                  clip.shx
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ start clip.shp
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ start QGIS clip.shp
+
+msleckman@COTA MINGW64 /h/ESM267/lab2 (master)
+$ cd ..
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ cd assign2/
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ ls
+MODIS/  MODIS.7z
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ cd MODIS
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS (master)
+$ ;ls
+bash: syntax error near unexpected token `;'
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS (master)
+$ ls
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS (master)
+$ cd crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/c
+bash: cd: crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/c: Nctory
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS (master)
+$ cd crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS/crefl2_A2016270210828-201627021000_geo_tiffs (master)
+$ ls
+ca-south-000_Lambert_Azimuthal_Equal_Area.prj
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.wld
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo721.tif
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo721.wld
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_proj_parm.txt
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS/crefl2_A2016270210828-201627021000_geo_tiffs (master)
+$ gdalinfo
+
+FAILURE: No datasource specified.
+Usage: gdalinfo [--help-general] [-json] [-mm] [-stats] [-hist] [-nogcp] [-nom
+                [-norat] [-noct] [-nofl] [-checksum] [-proj4]
+                [-listmdd] [-mdd domain|`all`]*
+                [-sd subdataset] [-oo NAME=VALUE]* datasetname
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS/crefl2_A2016270210828-201627021000_geo_tiffs (master)
+$ gdalinfo crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif
+Driver: GTiff/GeoTIFF
+Files: crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif
+Size is 3253, 3108
+Coordinate System is:
+PROJCS["unnamed",
+    GEOGCS["Unknown datum based upon the Authalic Sphere",
+        DATUM["Not_specified_based_on_Authalic_Sphere",
+            SPHEROID["Sphere",6371007.181,0,
+                AUTHORITY["EPSG","7035"]],
+            AUTHORITY["EPSG","6035"]],
+        PRIMEM["Greenwich",0],
+        UNIT["degree",0.0174532925199433],
+        AUTHORITY["EPSG","4035"]],
+    PROJECTION["Lambert_Azimuthal_Equal_Area"],
+    PARAMETER["latitude_of_center",35.5],
+    PARAMETER["longitude_of_center",-118],
+    PARAMETER["false_easting",0],
+    PARAMETER["false_northing",0],
+    UNIT["metre",1,
+        AUTHORITY["EPSG","9001"]]]
+Origin = (-406500.000000000000000,388250.000000000000000)
+Pixel Size = (250.000000000000000,-250.000000000000000)
+Metadata:
+  AREA_OR_POINT=Area
+  TIFFTAG_SOFTWARE=ppm2geotiff v0.0.1
+Image Structure Metadata:
+  INTERLEAVE=PIXEL
+Corner Coordinates:
+Upper Left  ( -406500.000,  388250.000) (122d41'53.98"W, 38d54'11.55"N)
+Lower Left  ( -406500.000, -388750.000) (122d18'25.62"W, 31d55'30.82"N)
+Upper Right (  406750.000,  388250.000) (113d17'55.63"W, 38d54'11.16"N)
+Lower Right (  406750.000, -388750.000) (113d41'24.86"W, 31d55'30.47"N)
+Center      (     125.000,    -250.000) (117d59'55.03"W, 35d29'51.91"N)
+Band 1 Block=3253x1 Type=Byte, ColorInterp=Red
+Band 2 Block=3253x1 Type=Byte, ColorInterp=Green
+Band 3 Block=3253x1 Type=Byte, ColorInterp=Blue
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS/crefl2_A2016270210828-201627021000_geo_tiffs (master)
+$ open QGIS crefl2_A2016270210828-2016270211555_250m_ca-south-000_
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.wld
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo721.tif
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo721.wld
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_proj_parm.txt
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS/crefl2_A2016270210828-201627021000_geo_tiffs (master)
+$ open QGIS crefl2_A2016270210828-2016270211555_250m_ca-south-000_
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.wld
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo721.tif
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo721.wld
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_proj_parm.txt
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS/crefl2_A2016270210828-201627021000_geo_tiffs (master)
+$ open QGIS crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif
+bash: open: command not found
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS/crefl2_A2016270210828-201627021000_geo_tiffs (master)
+$ start QGIS crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS/crefl2_A2016270210828-201627021000_geo_tiffs (master)
+$ start notepad++
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS/crefl2_A2016270210828-201627021000_geo_tiffs (master)
+$ cd ,,
+bash: cd: ,,: No such file or directory
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS/crefl2_A2016270210828-201627021000_geo_tiffs (master)
+$ cd ..
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/MODIS (master)
+$ cd ..
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ ls
+counties/  counties.7z  MODIS/  MODIS.7z
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ cd counties
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/counties (master)
+$ ls
+tl_2016_us_county/
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/counties (master)
+$ cd tl_2016_us_county/
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/counties/tl_2016_us_county (master)
+$ cd
+
+msleckman@COTA MINGW64 /h (master)
+$ cd /h/ESM267/assign2/counties/tl_2016_us_county/
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/counties/tl_2016_us_county (master)
+$ ls
+tl_2016_us_county.cpg  tl_2016_us_county.shp             tl_2016_us_county.shp
+tl_2016_us_county.dbf  tl_2016_us_county.shp.ea.iso.xml  tl_2016_us_county.shx
+tl_2016_us_county.prj  tl_2016_us_county.shp.iso.xml
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/counties/tl_2016_us_county (master)
+$ $ start
+bash: $: command not found
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/counties/tl_2016_us_county (master)
+$ di -b */*.shp
+bash: di: command not found
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/counties/tl_2016_us_county (master)
+$ du -b */*.shp
+du: cannot access '*/*.shp': No such file or directory
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/counties/tl_2016_us_county (master)
+$ cd ..
+
+msleckman@COTA MINGW64 /h/ESM267/assign2/counties (master)
+$ cd ..
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ du -b */*.shp
+du: cannot access '*/*.shp': No such file or directory
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ du -b /
+bin/               etc/               LICENSE.txt        ReleaseNotes.html  un
+cmd/               git-bash.exe       mingw64/           tmp/               un
+dev/               git-cmd.exe        proc/              unins000.dat       us
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ du -b ./
+counties/    counties.7z  MODIS/       MODIS.7z
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ du -b ./Modis/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiff
+ca-south-000_Lambert_Azimuthal_Equal_Area.prj
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.wld
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo721.tif
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo721.wld
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_proj_parm.txt
+Thumbs.db
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ du -b ./Modis/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiff0828-2016270211555_250m_ca-south-000_geo143.tif  ./counties/tl_2016_us_county/h
+tl_2016_us_county.shp             tl_2016_us_county.shp.xml
+tl_2016_us_county.shp.ea.iso.xml  tl_2016_us_county.shx
+tl_2016_us_county.shp.iso.xml
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ du -b ./Modis/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiff211555_250m_ca-south-000_geo143.tif  ./counties/tl_2016_us_county/tl_2016_us_c
+30331494        ./Modis/crefl2_A2016270210828-2016270211555_250m_ca-south-000_-2016270211555_250m_ca-south-000_geo143.tif
+123982264       ./counties/tl_2016_us_county/tl_2016_us_county.shp
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ ^C
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ ogrinfo -al -so assign2/counties/tl_2016_us_county/tl_2016_us_county.shp
+FAILURE:
+Unable to open datasource `assign2/counties/tl_2016_us_county/tl_2016_us_countrs.
+  -> JP2ECW
+  -> OCI
+  -> SOSI
+  -> PCIDSK
+  -> netCDF
+  -> JP2OpenJPEG
+  -> PDF
+  -> DB2ODBC
+  -> ESRI Shapefile
+  -> MapInfo File
+  -> UK .NTF
+  -> OGR_SDTS
+  -> S57
+  -> DGN
+  -> OGR_VRT
+  -> REC
+  -> Memory
+  -> BNA
+  -> CSV
+  -> NAS
+  -> GML
+  -> GPX
+  -> LIBKML
+  -> KML
+  -> GeoJSON
+  -> Interlis 1
+  -> Interlis 2
+  -> OGR_GMT
+  -> GPKG
+  -> SQLite
+  -> ODBC
+  -> WAsP
+  -> PGeo
+  -> MSSQLSpatial
+  -> OGR_OGDI
+  -> PostgreSQL
+  -> MySQL
+  -> OpenFileGDB
+  -> XPlane
+  -> DXF
+  -> CAD
+  -> Geoconcept
+  -> GeoRSS
+  -> GPSTrackMaker
+  -> VFK
+  -> PGDUMP
+  -> OSM
+  -> GPSBabel
+  -> SUA
+  -> OpenAir
+  -> OGR_PDS
+  -> WFS
+  -> HTF
+  -> AeronavFAA
+  -> Geomedia
+  -> EDIGEO
+  -> GFT
+  -> SVG
+  -> CouchDB
+  -> Cloudant
+  -> Idrisi
+  -> ARCGEN
+  -> SEGUKOOA
+  -> SEGY
+  -> XLS
+  -> ODS
+  -> XLSX
+  -> ElasticSearch
+  -> Walk
+  -> Carto
+  -> AmigoCloud
+  -> SXF
+  -> Selafin
+  -> JML
+  -> PLSCENES
+  -> CSW
+  -> VDV
+  -> GMLAS
+  -> TIGER
+  -> AVCBin
+  -> AVCE00
+  -> HTTP
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ ogrinfo -al -so /
+bin/               etc/               LICENSE.txt        ReleaseNotes.html  un
+cmd/               git-bash.exe       mingw64/           tmp/               un
+dev/               git-cmd.exe        proc/              unins000.dat       us
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ ogrinfo -al -so /
+bin/               etc/               LICENSE.txt        ReleaseNotes.html  un
+cmd/               git-bash.exe       mingw64/           tmp/               un
+dev/               git-cmd.exe        proc/              unins000.dat       us
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ ogrinfo -al -so ./
+counties/    counties.7z  MODIS/       MODIS.7z
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ ogrinfo -al -so MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_
+ca-south-000_Lambert_Azimuthal_Equal_Area.prj
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.wld
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo721.tif
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo721.wld
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_proj_parm.txt
+Thumbs.db
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ ogrinfo -al -so MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_-2016270211555_250m_ca-south-000_geo143.tif
+FAILURE:
+Unable to open datasource `MODIS/crefl2_A2016270210828-2016270211555_250m_ca-s270210828-2016270211555_250m_ca-south-000_geo143.tif' with the following drive
+  -> JP2ECW
+  -> OCI
+  -> SOSI
+  -> PCIDSK
+  -> netCDF
+  -> JP2OpenJPEG
+  -> PDF
+  -> DB2ODBC
+  -> ESRI Shapefile
+  -> MapInfo File
+  -> UK .NTF
+  -> OGR_SDTS
+  -> S57
+  -> DGN
+  -> OGR_VRT
+  -> REC
+  -> Memory
+  -> BNA
+  -> CSV
+  -> NAS
+  -> GML
+  -> GPX
+  -> LIBKML
+  -> KML
+  -> GeoJSON
+  -> Interlis 1
+  -> Interlis 2
+  -> OGR_GMT
+  -> GPKG
+  -> SQLite
+  -> ODBC
+  -> WAsP
+  -> PGeo
+  -> MSSQLSpatial
+  -> OGR_OGDI
+  -> PostgreSQL
+  -> MySQL
+  -> OpenFileGDB
+  -> XPlane
+  -> DXF
+  -> CAD
+  -> Geoconcept
+  -> GeoRSS
+  -> GPSTrackMaker
+  -> VFK
+  -> PGDUMP
+  -> OSM
+  -> GPSBabel
+  -> SUA
+  -> OpenAir
+  -> OGR_PDS
+  -> WFS
+  -> HTF
+  -> AeronavFAA
+  -> Geomedia
+  -> EDIGEO
+  -> GFT
+  -> SVG
+  -> CouchDB
+  -> Cloudant
+  -> Idrisi
+  -> ARCGEN
+  -> SEGUKOOA
+  -> SEGY
+  -> XLS
+  -> ODS
+  -> XLSX
+  -> ElasticSearch
+  -> Walk
+  -> Carto
+  -> AmigoCloud
+  -> SXF
+  -> Selafin
+  -> JML
+  -> PLSCENES
+  -> CSW
+  -> VDV
+  -> GMLAS
+  -> TIGER
+  -> AVCBin
+  -> AVCE00
+  -> HTTP
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ ogrinfo -al -so MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_-2016270211555_250m_ca-south-000_geo143.wld
+FAILURE:
+Unable to open datasource `MODIS/crefl2_A2016270210828-2016270211555_250m_ca-s270210828-2016270211555_250m_ca-south-000_geo143.wld' with the following drive
+  -> JP2ECW
+  -> OCI
+  -> SOSI
+  -> PCIDSK
+  -> netCDF
+  -> JP2OpenJPEG
+  -> PDF
+  -> DB2ODBC
+  -> ESRI Shapefile
+  -> MapInfo File
+  -> UK .NTF
+  -> OGR_SDTS
+  -> S57
+  -> DGN
+  -> OGR_VRT
+  -> REC
+  -> Memory
+  -> BNA
+  -> CSV
+  -> NAS
+  -> GML
+  -> GPX
+  -> LIBKML
+  -> KML
+  -> GeoJSON
+  -> Interlis 1
+  -> Interlis 2
+  -> OGR_GMT
+  -> GPKG
+  -> SQLite
+  -> ODBC
+  -> WAsP
+  -> PGeo
+  -> MSSQLSpatial
+  -> OGR_OGDI
+  -> PostgreSQL
+  -> MySQL
+  -> OpenFileGDB
+  -> XPlane
+  -> DXF
+  -> CAD
+  -> Geoconcept
+  -> GeoRSS
+  -> GPSTrackMaker
+  -> VFK
+  -> PGDUMP
+  -> OSM
+  -> GPSBabel
+  -> SUA
+  -> OpenAir
+  -> OGR_PDS
+  -> WFS
+  -> HTF
+  -> AeronavFAA
+  -> Geomedia
+  -> EDIGEO
+  -> GFT
+  -> SVG
+  -> CouchDB
+  -> Cloudant
+  -> Idrisi
+  -> ARCGEN
+  -> SEGUKOOA
+  -> SEGY
+  -> XLS
+  -> ODS
+  -> XLSX
+  -> ElasticSearch
+  -> Walk
+  -> Carto
+  -> AmigoCloud
+  -> SXF
+  -> Selafin
+  -> JML
+  -> PLSCENES
+  -> CSW
+  -> VDV
+  -> GMLAS
+  -> TIGER
+  -> AVCBin
+  -> AVCE00
+  -> HTTP
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ ogrinfo -al -so MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_-2016270211555_250m_ca-south-000_geo143.wld^C
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ ogrinfo -al -so MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_-2016270211555_250m_ca-south-000_geo143.tif
+FAILURE:
+Unable to open datasource `MODIS/crefl2_A2016270210828-2016270211555_250m_ca-s270210828-2016270211555_250m_ca-south-000_geo143.tif' with the following drive
+  -> JP2ECW
+  -> OCI
+  -> SOSI
+  -> PCIDSK
+  -> netCDF
+  -> JP2OpenJPEG
+  -> PDF
+  -> DB2ODBC
+  -> ESRI Shapefile
+  -> MapInfo File
+  -> UK .NTF
+  -> OGR_SDTS
+  -> S57
+  -> DGN
+  -> OGR_VRT
+  -> REC
+  -> Memory
+  -> BNA
+  -> CSV
+  -> NAS
+  -> GML
+  -> GPX
+  -> LIBKML
+  -> KML
+  -> GeoJSON
+  -> Interlis 1
+  -> Interlis 2
+  -> OGR_GMT
+  -> GPKG
+  -> SQLite
+  -> ODBC
+  -> WAsP
+  -> PGeo
+  -> MSSQLSpatial
+  -> OGR_OGDI
+  -> PostgreSQL
+  -> MySQL
+  -> OpenFileGDB
+  -> XPlane
+  -> DXF
+  -> CAD
+  -> Geoconcept
+  -> GeoRSS
+  -> GPSTrackMaker
+  -> VFK
+  -> PGDUMP
+  -> OSM
+  -> GPSBabel
+  -> SUA
+  -> OpenAir
+  -> OGR_PDS
+  -> WFS
+  -> HTF
+  -> AeronavFAA
+  -> Geomedia
+  -> EDIGEO
+  -> GFT
+  -> SVG
+  -> CouchDB
+  -> Cloudant
+  -> Idrisi
+  -> ARCGEN
+  -> SEGUKOOA
+  -> SEGY
+  -> XLS
+  -> ODS
+  -> XLSX
+  -> ElasticSearch
+  -> Walk
+  -> Carto
+  -> AmigoCloud
+  -> SXF
+  -> Selafin
+  -> JML
+  -> PLSCENES
+  -> CSW
+  -> VDV
+  -> GMLAS
+  -> TIGER
+  -> AVCBin
+  -> AVCE00
+  -> HTTP
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ ogrinfo -al -so MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_FAILURE:
+Unable to open datasource `MODIS/crefl2_A2016270210828-2016270211555_250m_ca-s the following drivers.
+  -> JP2ECW
+  -> OCI
+  -> SOSI
+  -> PCIDSK
+  -> netCDF
+  -> JP2OpenJPEG
+  -> PDF
+  -> DB2ODBC
+  -> ESRI Shapefile
+  -> MapInfo File
+  -> UK .NTF
+  -> OGR_SDTS
+  -> S57
+  -> DGN
+  -> OGR_VRT
+  -> REC
+  -> Memory
+  -> BNA
+  -> CSV
+  -> NAS
+  -> GML
+  -> GPX
+  -> LIBKML
+  -> KML
+  -> GeoJSON
+  -> Interlis 1
+  -> Interlis 2
+  -> OGR_GMT
+  -> GPKG
+  -> SQLite
+  -> ODBC
+  -> WAsP
+  -> PGeo
+  -> MSSQLSpatial
+  -> OGR_OGDI
+  -> PostgreSQL
+  -> MySQL
+  -> OpenFileGDB
+  -> XPlane
+  -> DXF
+  -> CAD
+  -> Geoconcept
+  -> GeoRSS
+  -> GPSTrackMaker
+  -> VFK
+  -> PGDUMP
+  -> OSM
+  -> GPSBabel
+  -> SUA
+  -> OpenAir
+  -> OGR_PDS
+  -> WFS
+  -> HTF
+  -> AeronavFAA
+  -> Geomedia
+  -> EDIGEO
+  -> GFT
+  -> SVG
+  -> CouchDB
+  -> Cloudant
+  -> Idrisi
+  -> ARCGEN
+  -> SEGUKOOA
+  -> SEGY
+  -> XLS
+  -> ODS
+  -> XLSX
+  -> ElasticSearch
+  -> Walk
+  -> Carto
+  -> AmigoCloud
+  -> SXF
+  -> Selafin
+  -> JML
+  -> PLSCENES
+  -> CSW
+  -> VDV
+  -> GMLAS
+  -> TIGER
+  -> AVCBin
+  -> AVCE00
+  -> HTTP
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ gdalwarp -t_ss ./
+counties/    counties.7z  MODIS/       MODIS.7z
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ gdalwarp -t_ss ./MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000
+ca-south-000_Lambert_Azimuthal_Equal_Area.prj                        crefl2_A2
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif     crefl2_A2
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.wld     Thumbs.db
+crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo721.tif
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ gdalwarp -t_ss ./MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_2016_us_county/tl_2016_us_county.
+tl_2016_us_county.cpg             tl_2016_us_county.prj             tl_2016_us
+tl_2016_us_county.dbf             tl_2016_us_county.shp             tl_2016_us
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ gdalwarp -t_srs ./MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-00l_2016_us_county/tl_2016_us_county.shp
+ERROR 1: Translating source or target SRS failed:
+./MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/crefl2
+Usage: gdalwarp [--help-general] [--formats]
+    [-s_srs srs_def] [-t_srs srs_def] [-to "NAME=VALUE"] [-novshiftgrid]
+    [-order n | -tps | -rpc | -geoloc] [-et err_threshold]
+    [-refine_gcps tolerance [minimum_gcps]]
+    [-te xmin ymin xmax ymax] [-tr xres yres] [-tap] [-ts width height]
+    [-ovr level|AUTO|AUTO-n|NONE] [-wo "NAME=VALUE"] [-ot Byte/Int16/...] [-wt
+    [-srcnodata "value [value...]"] [-dstnodata "value [value...]"] -dstalpha
+    [-r resampling_method] [-wm memory_in_mb] [-multi] [-q]
+    [-cutline datasource] [-cl layer] [-cwhere expression]
+    [-csql statement] [-cblend dist_in_pixels] [-crop_to_cutline]
+    [-of format] [-co "NAME=VALUE"]* [-overwrite]
+    [-nomd] [-cvmd meta_conflict_value] [-setci] [-oo NAME=VALUE]*
+    [-doo NAME=VALUE]*
+    srcfile* dstfile
+
+Available resampling methods:
+    near (default), bilinear, cubic, cubicspline, lanczos, average, mode,  max
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$            $
+bash: $: command not found
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ $
+bash: $: command not found
+
+msleckman@COTA MINGW64 /h/ESM267/assign2 (master)
+$ cd ..
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ du -b */
+assign2//       data-shell//    ESM267-github// lab1//          lab2//
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ du -b /
+bin/               dev/               git-bash.exe       LICENSE.txt        pr
+cmd/               etc/               git-cmd.exe        mingw64/           Re
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ du -b /
+bin/               dev/               git-bash.exe       LICENSE.txt        pr
+cmd/               etc/               git-cmd.exe        mingw64/           Re
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ du -b */
+assign2//       data-shell//    ESM267-github// lab1//          lab2//
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ du -b ./lab2/
+aoi.dbf                   aoi.shp                   claybark_dem_utm10n.tif
+aoi.kml                   aoi.shx                   clip.dbf
+aoi.prj                   claybark_dem_clipped.tif  clip.prj
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ du -b ./lab2/
+aoi.dbf                   aoi.shp                   claybark_dem_utm10n.tif
+aoi.kml                   aoi.shx                   clip.dbf
+aoi.prj                   claybark_dem_clipped.tif  clip.prj
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ du -b ./lab2/*.shp
+428     ./lab2/aoi.shp
+197748  ./lab2/clip.shp
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ du -b ./lab2/InVEST_CV/
+AOI_BarkClay.dbf        AOI_BarkClay.shp        claybark_dem.aux        global
+AOI_BarkClay.prj        AOI_BarkClay.shp.xml    claybark_dem.aux.xml    global
+AOI_BarkClay.sbn        AOI_BarkClay.shx        global_polygon.dbf      global
+AOI_BarkClay.sbx        claybark_dem/           global_polygon.prj      global
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ du -b ./lab2/InVEST_CV/*.shp
+428     ./lab2/InVEST_CV/AOI_BarkClay.shp
+161500092       ./lab2/InVEST_CV/global_polygon.shp
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ start QGID
+The system cannot find the file QGID.
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ start QGIS
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
+$ gdalwarp -t_srs ^CMODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-00l_2016_us_county/tl_2016_us_county.shp
+
+msleckman@COTA MINGW64 /h/ESM267 (master)
