@@ -40,7 +40,6 @@ du -b ./Modis/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/cr
 # ogr2ogr -t_srs EPSG:4326 aoi.shp InVEST_CV/AOI_BarkClay.shp
 	
 ## what we use:	
-
 gdalwarp -t_srs EPSG:3310 ./assign2/MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo143.tif ./assign2/MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/reproject_geo143.tif
 
 ## Try to rename the files
@@ -54,10 +53,14 @@ gdalwarp -t_srs EPSG:3310 ./assign2/MODIS/crefl2_A2016270210828-2016270211555_25
 
  ogr2ogr -where "NAME='Santa Barbara'" santa_barbara_county tl_2016_us_county.shp
 # creates a folder within tl_2016_us_county that has a copy of the files 
-# need to rename 
 
-" gdalwarp -dstnodata -32768 -of GTiff -co COMPRESS=DEFLATE" -cutline $roi -crop_to_cutline "
-
+# Rename
+for i in *; do mv "$i" ${i//\us/sb}; done 
 
 ## iii. Perform the clipdst on the raster within the feature cliped from ii. 
 " gdalwarp -dstnodata -32768 -of GTiff -co COMPRESS=DEFLATE" -cutline $roi -crop_to_cutline "
+
+gdalwarp -cutline H:/ESM267/assign2/counties/tl_2016_us_county/santa_barbara_county/tl_2016_sb_county.shp -crop_to_cutline -dstalpha -dstnodata H:/ESM267/assign2/MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/reproject_geo143.tif H:/ESM267/assign2/MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/sb_3.tif
+# dstalpha: adds an alpha band in the geotif to mask the background
+
+gdalwarp -srcnodata H:/ESM267/assign2/MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/reproject_geo143.tif -dstnodata H:/ESM267/assign2/MODIS/crefl2_A2016270210828-2016270211555_250m_ca-south-000_geo_tiffs/sb.tif -crop_to_cutline -cutline H:/ESM267/assign2/counties/tl_2016_us_county/santa_barbara_county/tl_2016_sb_county.shp INPUT.tif OUTPUT.tif
